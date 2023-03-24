@@ -1,0 +1,12 @@
+C:\Users\Srujan Patel\Desktop\Solution1\Booking.Service\bin\Debug\net6.0\Booking.Service.deps.json
+C:\Users\Srujan Patel\Desktop\Solution1\Booking.Service\bin\Debug\net6.0\Booking.Service.dll
+C:\Users\Srujan Patel\Desktop\Solution1\Booking.Service\bin\Debug\net6.0\Booking.Service.pdb
+C:\Users\Srujan Patel\Desktop\Solution1\Booking.Service\obj\Debug\net6.0\Booking.Service.csproj.AssemblyReference.cache
+C:\Users\Srujan Patel\Desktop\Solution1\Booking.Service\obj\Debug\net6.0\Booking.Service.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Srujan Patel\Desktop\Solution1\Booking.Service\obj\Debug\net6.0\Booking.Service.AssemblyInfoInputs.cache
+C:\Users\Srujan Patel\Desktop\Solution1\Booking.Service\obj\Debug\net6.0\Booking.Service.AssemblyInfo.cs
+C:\Users\Srujan Patel\Desktop\Solution1\Booking.Service\obj\Debug\net6.0\Booking.Service.csproj.CoreCompileInputs.cache
+C:\Users\Srujan Patel\Desktop\Solution1\Booking.Service\obj\Debug\net6.0\Booking.Service.dll
+C:\Users\Srujan Patel\Desktop\Solution1\Booking.Service\obj\Debug\net6.0\refint\Booking.Service.dll
+C:\Users\Srujan Patel\Desktop\Solution1\Booking.Service\obj\Debug\net6.0\Booking.Service.pdb
+C:\Users\Srujan Patel\Desktop\Solution1\Booking.Service\obj\Debug\net6.0\ref\Booking.Service.dll

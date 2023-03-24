@@ -1,0 +1,12 @@
+C:\Users\Srujan Patel\Desktop\Solution1\Booking.Domain\bin\Debug\net6.0\Booking.Domain.deps.json
+C:\Users\Srujan Patel\Desktop\Solution1\Booking.Domain\bin\Debug\net6.0\Booking.Domain.dll
+C:\Users\Srujan Patel\Desktop\Solution1\Booking.Domain\bin\Debug\net6.0\Booking.Domain.pdb
+C:\Users\Srujan Patel\Desktop\Solution1\Booking.Domain\obj\Debug\net6.0\Booking.Domain.csproj.AssemblyReference.cache
+C:\Users\Srujan Patel\Desktop\Solution1\Booking.Domain\obj\Debug\net6.0\Booking.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Srujan Patel\Desktop\Solution1\Booking.Domain\obj\Debug\net6.0\Booking.Domain.AssemblyInfoInputs.cache
+C:\Users\Srujan Patel\Desktop\Solution1\Booking.Domain\obj\Debug\net6.0\Booking.Domain.AssemblyInfo.cs
+C:\Users\Srujan Patel\Desktop\Solution1\Booking.Domain\obj\Debug\net6.0\Booking.Domain.csproj.CoreCompileInputs.cache
+C:\Users\Srujan Patel\Desktop\Solution1\Booking.Domain\obj\Debug\net6.0\Booking.Domain.dll
+C:\Users\Srujan Patel\Desktop\Solution1\Booking.Domain\obj\Debug\net6.0\refint\Booking.Domain.dll
+C:\Users\Srujan Patel\Desktop\Solution1\Booking.Domain\obj\Debug\net6.0\Booking.Domain.pdb
+C:\Users\Srujan Patel\Desktop\Solution1\Booking.Domain\obj\Debug\net6.0\ref\Booking.Domain.dll
