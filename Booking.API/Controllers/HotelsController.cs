@@ -17,18 +17,27 @@ namespace Booking.API.Controllers
     public class HotelsController : Controller
 
     {
-        private readonly DataSource m_dataSource;
-        public HotelsController(DataSource dataSource)//datasource is a service registered in program.cs
+        private readonly IDataSource m_dataSource;// data  soure is readonly
+        private readonly HttpContext _http;
+
+        public HotelsController(IDataSource dataSource, IHttpContextAccessor httpContextAccessor)//datasource is a service registered in program.cs
         {
-            m_dataSource=dataSource;
+            m_dataSource = dataSource;
+            _http = httpContextAccessor.HttpContext;
         }
 
         [HttpGet]
         public IActionResult GetAllHotels()
         {
 
-            var hotels = m_dataSource.hotels;
-            return Ok(hotels);
+
+            
+            var hotels = m_dataSource.GetHotels();
+
+            _http.Request.Headers.TryGetValue("my-middleware-header", out var headerDate);
+            return Ok(headerDate);
+
+
         }
 
 
@@ -36,7 +45,7 @@ namespace Booking.API.Controllers
         [Route("{Id}")]//only define what follows after base route part,  {} is a placeholder for value entered by the client
         public IActionResult GetHotelByID(int Id)// lets the client specify which id to use
         {
-            var hotels = m_dataSource.hotels;
+            var hotels = m_dataSource.GetHotels();
             var hotel = hotels.FirstOrDefault(hotel => hotel.hotelID == Id);
             if (hotel == null)
             {
@@ -51,7 +60,7 @@ namespace Booking.API.Controllers
         [HttpPost]
         public IActionResult CreateHotel([FromBody] Booking.Domain.Models.Hotel hotel)
         {
-            var hotels = m_dataSource.hotels;
+            var hotels = m_dataSource.GetHotels();
             hotels.Add(hotel);
             return CreatedAtAction(nameof(GetHotelByID), new { Id = hotel.hotelID }, hotel);
 
@@ -63,7 +72,7 @@ namespace Booking.API.Controllers
         public IActionResult UpdateHotel([FromBody] Booking.Domain.Models.Hotel update, int Id) //get object from the body and id from the route
         {
 
-            var hotels = m_dataSource.hotels;
+            var hotels = m_dataSource.GetHotels();
             var old = hotels.FirstOrDefault(h => h.hotelID == Id);
             if (old == null)
             {
@@ -81,7 +90,7 @@ namespace Booking.API.Controllers
         [Route("{Id}")]
         public IActionResult DeleteHotel(int Id)
         {
-            var hotels = m_dataSource.hotels;
+            var hotels = m_dataSource.GetHotels();
             var todelete = hotels.FirstOrDefault(h => h.hotelID == Id);
             if (todelete == null)
             {
