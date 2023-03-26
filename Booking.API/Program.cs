@@ -1,5 +1,6 @@
 using Booking.API;
 using Booking.API.Middleware;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -7,7 +8,14 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
 builder.Services.AddSingleton<IDataSource, DataSource>();
-builder.Services.AddHttpContextAccessor();//inbuilt
+
+builder.Services.AddAutoMapper(typeof(Program));
+
+var cs= builder.Configuration.GetConnectionString("Default");
+
+builder.Services.AddDbContext<Booking.Dal.DataContext>(options => { options.UseSqlServer(cs); }) ;
+
+
 
 //crreates a single instance when first required 
 //provides the same instance to all consumers for the entire lifetime
@@ -38,7 +46,7 @@ app.UseHttpsRedirection(); //redirect to https
 
 app.UseAuthorization();
 
-app.UseDateTimeHeader();
+//app.UseDateTimeHeader();
 
 app.MapControllers(); //map the request to a controller base class
 

@@ -19,7 +19,7 @@ namespace Booking.API.Middleware
         {
             //executed on the request
             httpContext.Request.Headers.Add("my-middleware-header", DateTime.Now.ToString());
-            await Task.FromResult(_next(httpContext));
+            await _next(httpContext);
 
             //executed on the response
         }

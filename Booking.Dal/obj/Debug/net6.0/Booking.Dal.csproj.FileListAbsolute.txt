@@ -10,3 +10,8 @@ C:\Users\Srujan Patel\Desktop\Solution1\Booking.Dal\obj\Debug\net6.0\Booking.Dal
 C:\Users\Srujan Patel\Desktop\Solution1\Booking.Dal\obj\Debug\net6.0\refint\Booking.Dal.dll
 C:\Users\Srujan Patel\Desktop\Solution1\Booking.Dal\obj\Debug\net6.0\Booking.Dal.pdb
 C:\Users\Srujan Patel\Desktop\Solution1\Booking.Dal\obj\Debug\net6.0\ref\Booking.Dal.dll
+C:\Users\Srujan Patel\Desktop\Solution1\Booking.Dal\bin\Debug\net6.0\Booking.Dal.runtimeconfig.json
+C:\Users\Srujan Patel\Desktop\Solution1\Booking.Dal\bin\Debug\net6.0\Booking.Domain.dll
+C:\Users\Srujan Patel\Desktop\Solution1\Booking.Dal\bin\Debug\net6.0\Booking.Domain.pdb
+C:\Users\Srujan Patel\Desktop\Solution1\Booking.Dal\obj\Debug\net6.0\Booking.Dal.csproj.CopyComplete
+C:\Users\Srujan Patel\Desktop\Solution1\Booking.Dal\obj\Debug\net6.0\Booking.Dal.genruntimeconfig.cache
