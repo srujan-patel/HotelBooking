@@ -1,5 +1,7 @@
 using Booking.API;
 using Booking.API.Middleware;
+using Booking.Dal.Repositories;
+using Booking.Domain.Abstractions.Repositories;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -8,7 +10,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
 builder.Services.AddSingleton<IDataSource, DataSource>();
-
+builder.Services.AddScoped<IHotelsRepository, HotelRepository>();
 builder.Services.AddAutoMapper(typeof(Program));
 
 var cs= builder.Configuration.GetConnectionString("Default");

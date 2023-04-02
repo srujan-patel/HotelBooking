@@ -20,8 +20,8 @@ namespace Booking.Dal
         
         }
         public DbSet<Booking.Domain.Models.Hotel> hotels { get; set; }//generate a table for hotels which will contain hotels
-        public DbSet<Booking.Domain.Models.Room> Rooms { get; set; }
-        public DbSet<Booking.Domain.Models.Reservation> Reservations { get; set; }
+        public DbSet<Booking.Domain.Models.Room> Rooms { get; set; }//table for rooms
+        public DbSet<Booking.Domain.Models.Reservation> Reservations { get; set; }//table for reservations
 
 
 
