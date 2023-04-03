@@ -2,6 +2,8 @@ using Booking.API;
 using Booking.API.Middleware;
 using Booking.Dal.Repositories;
 using Booking.Domain.Abstractions.Repositories;
+using Booking.Domain.Abstractions.Services;
+using Booking.Service.Services;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -11,11 +13,12 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 builder.Services.AddSingleton<IDataSource, DataSource>();
 builder.Services.AddScoped<IHotelsRepository, HotelRepository>();
+builder.Services.AddScoped<IReservationInterface, ReservationService>();//everthing dealing with the db has to be scoped 
 builder.Services.AddAutoMapper(typeof(Program));
 
 var cs= builder.Configuration.GetConnectionString("Default");
 
-builder.Services.AddDbContext<Booking.Dal.DataContext>(options => { options.UseSqlServer(cs); }) ;
+builder.Services.AddDbContext<Booking.Dal.DataContext>(options => { options.UseSqlServer(cs); }) ;// this is also scoped
 
 
 
@@ -28,9 +31,6 @@ builder.Services.AddDbContext<Booking.Dal.DataContext>(options => { options.UseS
 
 //services.scoped()
 //crreates an instance for each request 
-
-
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 

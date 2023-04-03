@@ -14,6 +14,9 @@ namespace Booking.Domain.Models
         public double surface { get; set; }
         public bool needsRepair { get; set; }
         public int hotelId { get; set; }//one to many relationship 
+
+        public DateTime? BusyFrom { get; set; }
+        public DateTime? BusyTo { get; set; }
         public Hotel Hotel { get; set; }//if you want to make a rrelation with the room you should be able to see the hotel as per the entity framework called as navigation property
 
     }

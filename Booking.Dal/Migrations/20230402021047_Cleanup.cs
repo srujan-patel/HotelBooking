@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace Booking.Dal.Migrations
 {
     /// <inheritdoc />
-    public partial class Initial : Migration
+    public partial class Cleanup : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -38,16 +38,19 @@ namespace Booking.Dal.Migrations
                     roomNumber = table.Column<int>(type: "int", nullable: false),
                     surface = table.Column<double>(type: "float", nullable: false),
                     needsRepair = table.Column<bool>(type: "bit", nullable: false),
-                    hotelID = table.Column<int>(type: "int", nullable: true)
+                    hotelId = table.Column<int>(type: "int", nullable: true),
+                    BusyFrom = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    BusyTo = table.Column<DateTime>(type: "datetime2", nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Rooms", x => x.roomID);
                     table.ForeignKey(
-                        name: "FK_Rooms_hotels_hotelID",
-                        column: x => x.hotelID,
+                        name: "FK_Rooms_hotels_hotelId",
+                        column: x => x.hotelId,
                         principalTable: "hotels",
-                        principalColumn: "hotelID");
+                        principalColumn: "hotelID",
+                        onDelete: ReferentialAction.SetNull);
                 });
 
             migrationBuilder.CreateTable(
@@ -56,31 +59,43 @@ namespace Booking.Dal.Migrations
                 {
                     reservationId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    roomID = table.Column<int>(type: "int", nullable: false),
-                    startDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    endDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    roomId = table.Column<int>(type: "int", nullable: true),
+                    hotelId = table.Column<int>(type: "int", nullable: true),
+                    checkinDate = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    checkoutDate = table.Column<DateTime>(type: "datetime2", nullable: true),
                     customerName = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Reservations", x => x.reservationId);
                     table.ForeignKey(
-                        name: "FK_Reservations_Rooms_roomID",
-                        column: x => x.roomID,
+                        name: "FK_Reservations_Rooms_roomId",
+                        column: x => x.roomId,
                         principalTable: "Rooms",
                         principalColumn: "roomID",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.SetNull);
+                    table.ForeignKey(
+                        name: "FK_Reservations_hotels_hotelId",
+                        column: x => x.hotelId,
+                        principalTable: "hotels",
+                        principalColumn: "hotelID",
+                        onDelete: ReferentialAction.SetNull);
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_Reservations_roomID",
+                name: "IX_Reservations_hotelId",
                 table: "Reservations",
-                column: "roomID");
+                column: "hotelId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Rooms_hotelID",
+                name: "IX_Reservations_roomId",
+                table: "Reservations",
+                column: "roomId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Rooms_hotelId",
                 table: "Rooms",
-                column: "hotelID");
+                column: "hotelId");
         }
 
         /// <inheritdoc />

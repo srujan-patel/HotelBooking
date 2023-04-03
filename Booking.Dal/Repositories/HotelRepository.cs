@@ -80,7 +80,9 @@ namespace Booking.Dal.Repositories
         public async Task<Hotel> GetHotelByIdAsync(int id)
         {
 
-            var hotel = await m_dataContext.hotels.FirstOrDefaultAsync(hotel => hotel.hotelID == id);
+            var hotel = await m_dataContext.hotels
+                .Include(h=> h.roomList)//also include the roomlist when fetching data from the database
+                .FirstOrDefaultAsync(hotel => hotel.hotelID == id);
             if (hotel == null)
             {
                 return null;

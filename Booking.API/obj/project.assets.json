@@ -1284,6 +1284,19 @@
         "runtime": {
           "bin/placeholder/Booking.Domain.dll": {}
         }
+      },
+      "Booking.Service/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Booking.Dal": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Booking.Service.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Booking.Service.dll": {}
+        }
       }
     }
   },
@@ -3982,6 +3995,11 @@
       "type": "project",
       "path": "../Booking.Domain/Booking.Domain.csproj",
       "msbuildProject": "../Booking.Domain/Booking.Domain.csproj"
+    },
+    "Booking.Service/1.0.0": {
+      "type": "project",
+      "path": "../Booking.Service/Booking.Service.csproj",
+      "msbuildProject": "../Booking.Service/Booking.Service.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -3989,6 +4007,7 @@
       "AutoMapper.Extensions.Microsoft.DependencyInjection >= 12.0.0",
       "Booking.Dal >= 1.0.0",
       "Booking.Domain >= 1.0.0",
+      "Booking.Service >= 1.0.0",
       "Microsoft.EntityFrameworkCore >= 7.0.4",
       "Microsoft.EntityFrameworkCore.Design >= 7.0.4",
       "Microsoft.EntityFrameworkCore.SqlServer >= 7.0.4",
@@ -4032,6 +4051,9 @@
             },
             "C:\\Users\\Srujan Patel\\Desktop\\Solution1\\Booking.Domain\\Booking.Domain.csproj": {
               "projectPath": "C:\\Users\\Srujan Patel\\Desktop\\Solution1\\Booking.Domain\\Booking.Domain.csproj"
+            },
+            "C:\\Users\\Srujan Patel\\Desktop\\Solution1\\Booking.Service\\Booking.Service.csproj": {
+              "projectPath": "C:\\Users\\Srujan Patel\\Desktop\\Solution1\\Booking.Service\\Booking.Service.csproj"
             }
           }
         }
